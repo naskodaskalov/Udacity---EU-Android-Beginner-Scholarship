@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Sofia Airport Tracking System</string>
+    <string name="phone_number">+359 2 937 2211</string>
+    <string name="active_section">Departures</string>
+    <string name="address">Sofia, Christopher Columbus blvd.</string>
+    <string name="github_acc">naskodaskalov</string>
+    <string name="mail">comments@sofia-airport.bg</string>
+    <string name="section">Arrivals</string>
+    <string name="terminal2">T2</string>
+    <string name="departure">Time of Dep.</string>
+    <color name="black">#000000</color>
+</resources>
