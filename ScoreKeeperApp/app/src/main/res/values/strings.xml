@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Score Keeper App</string>
+    <string name="set_sports">Choose teams:</string>
+    <string name="add_goal">+1 Goal</string>
+    <string name="add_yellow_card">+1 Yellow card</string>
+    <string name="add_red_card">+1 Red card</string>
+    <string name="add_corner">+1 Corner</string>
+    <string name="btn_new_game">Finish game</string>
+    <string name="match_winner">Winner:</string>
+    <string name="btn_go_back">Go back</string>
+    <string name="home_team">Enter home team here...</string>
+    <string name="away_team">Enter away team here...</string>
+</resources>
