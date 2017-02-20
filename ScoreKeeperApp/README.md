@@ -5,6 +5,7 @@
 This is a project after Lesson 2A and 2B. It is an app for keeping the score of football matches.
 
 First there is a progress bar:
+
 <img src="/ScoreKeeperApp/screenshots/Screenshot_1487599628.png" width="281" height="500">
 
 After 3 seconds the progress bar will be hiden and you have to choose the names of the teams:
