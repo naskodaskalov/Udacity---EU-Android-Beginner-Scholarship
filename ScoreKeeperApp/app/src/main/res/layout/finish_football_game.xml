@@ -59,7 +59,7 @@
                 android:onClick="goBack"
                 android:padding="15dp"
                 android:background="#15ac89"
-                android:text="@string/btn_go_back" />
+                android:text="@string/inplay_back_btn" />
         </LinearLayout>
 
     </LinearLayout>

@@ -1,5 +1,7 @@
 package bg.cloudvps.naskodaskalov.scorekeeperapp;
 
+import android.content.res.Configuration;
+import android.databinding.DataBindingUtil;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,16 +12,13 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import org.w3c.dom.Text;
-
 import static android.R.attr.start;
 import static android.R.attr.y;
 import static bg.cloudvps.naskodaskalov.scorekeeperapp.R.id.home;
 import static bg.cloudvps.naskodaskalov.scorekeeperapp.R.id.nameTeamA;
 
 public class MainActivity extends AppCompatActivity {
-
     int scoreTeamA = 0;
     int scoreTeamB = 0;
     int yellowCardsTeamA = 0;
@@ -29,13 +28,7 @@ public class MainActivity extends AppCompatActivity {
     int cornersTeamA = 0;
     int cornersTeamB = 0;
 
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-
+    public void initializePogressBar() {
         setContentView(R.layout.activity_main);
         final LinearLayout homeView = (LinearLayout) findViewById(R.id.home_layout);
         final ProgressBar progressbar = (ProgressBar) findViewById(R.id.progressBar4);
@@ -48,17 +41,23 @@ public class MainActivity extends AppCompatActivity {
                 homeView.setVisibility(View.VISIBLE);
             }
         }, 3000);
+    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initializePogressBar();
+    }
 
-
-
-
+    @Override
+    public void onBackPressed() {
+        setContentView(R.layout.activity_main);
+        initializePogressBar();
     }
 
     public void goBack(View v) {
         setContentView(R.layout.activity_main);
+        initializePogressBar();
     }
-
-
     public void showFootballLayout(View v) {
         EditText nameTeamA = (EditText) findViewById(R.id.nameTeamA);
         String nameOfTeamA = nameTeamA.getText().toString();
@@ -98,12 +97,12 @@ public class MainActivity extends AppCompatActivity {
    * Here are the functions for goals for both teams:
    */
     public void displayGoalsForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById( R.id.team_a_score);
+        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
     }
 
     public void displayGoalsForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById( R.id.team_b_score);
+        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
     }
 
@@ -121,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
     * Here are the functions for yellow cards for both teams:
     */
     public void displayYellowCardsForTeamA(int yellowCards) {
-        TextView yellowCardsView = (TextView) findViewById( R.id.team_a_yellow_cards);
+        TextView yellowCardsView = (TextView) findViewById(R.id.team_a_yellow_cards);
         yellowCardsView.setText(String.valueOf(yellowCards));
     }
 
@@ -131,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayYellowCardsForTeamB(int yellowCards) {
-        TextView yellowCardsView = (TextView) findViewById( R.id.team_b_yellow_cards);
+        TextView yellowCardsView = (TextView) findViewById(R.id.team_b_yellow_cards);
         yellowCardsView.setText(String.valueOf(yellowCards));
     }
 
@@ -144,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
     * Here are the functions for red cards for both teams:
     */
     public void displayRedCardsForTeamA(int redCrds) {
-        TextView yellowCardsView = (TextView) findViewById( R.id.team_a_red_cards);
+        TextView yellowCardsView = (TextView) findViewById(R.id.team_a_red_cards);
         yellowCardsView.setText(String.valueOf(redCrds));
     }
 
@@ -154,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayRedCardsForTeamB(int redCards) {
-        TextView yellowCardsView = (TextView) findViewById( R.id.team_b_red_cards);
+        TextView yellowCardsView = (TextView) findViewById(R.id.team_b_red_cards);
         yellowCardsView.setText(String.valueOf(redCards));
     }
 
@@ -168,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
     * Here are the functions for corners for both teams:
     */
     public void displayCornersForTeamA(int corner) {
-        TextView cornersView = (TextView) findViewById( R.id.corners_team_a);
+        TextView cornersView = (TextView) findViewById(R.id.corners_team_a);
         cornersView.setText(String.valueOf(corner));
     }
 
@@ -178,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayCornersForTeamB(int corner) {
-        TextView cornersView = (TextView) findViewById( R.id.corners_team_b);
+        TextView cornersView = (TextView) findViewById(R.id.corners_team_b);
         cornersView.setText(String.valueOf(corner));
     }
 
@@ -195,10 +194,10 @@ public class MainActivity extends AppCompatActivity {
         String teamWinner;
         TextView winner;
         if (scoreTeamA > scoreTeamB) {
-            winner = (TextView) findViewById( R.id.teamA_name);
+            winner = (TextView) findViewById(R.id.teamA_name);
             teamWinner = winner.getText().toString();
         } else if (scoreTeamA < scoreTeamB) {
-            winner = (TextView) findViewById( R.id.teamB_name);
+            winner = (TextView) findViewById(R.id.teamB_name);
             teamWinner = winner.getText().toString();
         } else {
             teamWinner = "No winner!";

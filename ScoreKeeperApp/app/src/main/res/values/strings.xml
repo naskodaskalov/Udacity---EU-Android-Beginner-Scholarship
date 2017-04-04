@@ -7,7 +7,7 @@
     <string name="add_corner">+1 Corner</string>
     <string name="btn_new_game">Finish game</string>
     <string name="match_winner">Winner:</string>
-    <string name="btn_go_back">Go back</string>
+    <string name="inplay_back_btn">Go back</string>
     <string name="home_team">Enter home team here...</string>
     <string name="away_team">Enter away team here...</string>
 </resources>
